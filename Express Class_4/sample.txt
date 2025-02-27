@@ -1,0 +1,2 @@
+type of request
+get,post,put,delete,patch
