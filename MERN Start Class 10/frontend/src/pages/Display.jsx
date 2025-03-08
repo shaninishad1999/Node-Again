@@ -1,9 +1,48 @@
-import React from 'react'
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const Display = () => {
-  return (
-    <div>Display</div>
-  )
-}
+  const [data, setData] = useState([]);
 
-export default Display
+  const loadData = async () => {
+    let api = "http://localhost:8080/employee/display";
+    const response = await axios.get(api);
+    console.log(response.data);
+    setData(response.data)
+  };
+  useEffect(() => {
+    loadData();
+  }, []);
+
+const ans=data.map((key)=>{
+  return(
+    <>
+    <tr>
+      <td>{key.empno}</td>
+      <td>{key.name}</td>
+      <td>{key.designation}</td>
+      <td>{key.salary}</td>
+      <td></td>
+    </tr>
+  
+    
+    </>
+  )
+})
+
+  return(
+    <>
+    <table border="1">
+      <tr>
+        <th>empno</th>
+        <th>empname</th>
+        <th>emp positon</th>
+        <th>emp salary</th>
+      </tr>
+      {ans}
+    </table>
+    </>
+  )
+};
+
+export default Display;
