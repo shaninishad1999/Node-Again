@@ -21,7 +21,7 @@ const Insert = () => {
     <div>
       <h1>Insert Data</h1>
       Enter Employee No : <input type="text" name="empno" onChange={handleInput} /> <br />
-      Enter Employee Name : <input type="text" name="empname" onChange={handleInput} /> <br />
+      Enter Employee Name : <input type="text" name="name" onChange={handleInput} /> <br />
       Enter Employee Designation : <input type="text" name="designation" onChange={handleInput} /> <br />
       Enter Employee Salary : <input type="text" name="salary" onChange={handleInput} /> <br />
 

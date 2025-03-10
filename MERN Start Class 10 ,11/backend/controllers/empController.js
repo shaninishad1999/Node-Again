@@ -10,8 +10,8 @@ const dataSave = async (req, res) => {
         designation: designation,
         salary: salary
     });
-
-    res.send("data save succesfully");
+res.send(Employee)
+    // res.send("data save succesfully");
 };
 
 const showData = async (req, res) => {
@@ -21,15 +21,17 @@ const showData = async (req, res) => {
 };
 
 const searchData = async (req, res) => {
+    // These are checker to api is  working fine
+    // console.log("this is okay")
+    // res.send("done")
 
-      const { id } = req.params; 
-      const data = await EmpModel.findById(id); // Find employee by ID
-  
-      if (!data) {
-        return res.status(404).json({ message: "Employee not found" });
-      }
-  
-      res.status(200).json(data); // Send employee data as response
+
+    const {eno}=req.query;
+    const Employee=await EmpModel.find({empno:eno})
+    res.send(Employee)
+
+
+     
     
   };
   
