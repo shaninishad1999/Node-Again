@@ -15,10 +15,19 @@ const userRegistration = async (req, res) => {
 };
 
 const userLogin=async(req,res)=>{
+    // console.log(req.body);
 
-    
-
-    res.send("Okay")
+    const {email,password}=req.body;
+    const user=await userModel.findOne({email:email})
+    if(!user){
+       res.send("Invalid Email")
+       
+    }else if(user.password!=password){
+        res.send("Invalid password")
+        
+    }else{
+        res.send({user:user,msg:"You are login succefully"})
+    }
 
 }
 
