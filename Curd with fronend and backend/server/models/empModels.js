@@ -7,4 +7,5 @@ const EmpSchema=new mongoose.Schema({
     password:String
 })
 
+
 module.exports=mongoose.model("Employees",EmpSchema)

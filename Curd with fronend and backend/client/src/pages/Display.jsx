@@ -28,7 +28,7 @@ const Display = () => {
             <th className="border border-gray-300 p-2">Email</th>
             <th className="border border-gray-300 p-2">Phone</th>
             <th className="border border-gray-300 p-2">Password</th>
-            <th className="border border-gray-300 p-2">Confirm Password</th>
+           
           </tr>
         </thead>
         <tbody>
@@ -39,7 +39,7 @@ const Display = () => {
                 <td className="border border-gray-300 p-2">{employee.email}</td>
                 <td className="border border-gray-300 p-2">{employee.phone}</td>
                 <td className="border border-gray-300 p-2">{employee.password}</td>
-                <td className="border border-gray-300 p-2">{employee.confirmPassword}</td>
+                
               </tr>
             ))
           ) : (
