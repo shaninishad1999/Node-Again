@@ -12,6 +12,7 @@ const Insert=()=>{
         let api="http://localhost:9000/employee/save";
         const response = await axios.post(api, input);
         console.log(response.data);
+        alert("data save")
     }    
     return(
         <>
