@@ -6,6 +6,9 @@ import Display from "./pages/Display";
 import Search from "./pages/Search";
 import Update from "./pages/Update";
 import EditData from "./pages/EditData";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+import 'bootstrap/dist/css/bootstrap.min.css';
 const App=()=>{
   return(
     <>
@@ -18,6 +21,8 @@ const App=()=>{
             <Route path="search" element={<Search/>}/>
             <Route path="update" element={<Update/>}/>
             <Route path="editdata/:id" element={<EditData/>}/>
+            <Route path="login" element={<Login/>}/>
+            <Route path="signup" element={<SignUp/>}/>
           </Route>
         </Routes>      
       </BrowserRouter>

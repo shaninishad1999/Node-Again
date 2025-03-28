@@ -6,7 +6,9 @@ const Layout=()=>{
           <Link to="insert">Insert</Link> |
           <Link to="display">Display</Link> |
           <Link to="search">Search</Link> |
-          <Link to="update"> Update </Link>
+          <Link to="update"> Update | </Link> 
+          <Link to="signup"> SignUp  | </Link> 
+          <Link to="login"> login </Link> 
          <hr />
          <Outlet />
          <hr />

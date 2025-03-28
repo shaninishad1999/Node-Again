@@ -54,6 +54,34 @@ const dataEditSave=async(req, res)=>{
    res.send("data succesfully updated!!!");
 }
 
+const UserDataSave=async(req, res)=>{
+    const { name, city,  email,password} = req.body;
+    const Employee = await EmpModel.create({
+        name:name,
+        city:city,
+        email: email,
+        password:password
+    })
+      res.send({ msg: "User registered successfully!" });
+}
+
+const UserLogin=async(req,res)=>{
+   const {email,password}=req.body;
+   const Employee=await EmpModel.findOne({email:email})
+
+  if(!Employee){
+
+      res.send({ msg: "Invalid email" });
+    }
+    
+    if(Employee.password!=password){
+        res.send({ msg: "Invalid password" });
+        
+    }
+    
+    res.send({ msg: "Loign Succesfully", Employee:Employee });
+    
+}
 
 module.exports ={
     dataSave,
@@ -62,5 +90,6 @@ module.exports ={
     dataUpdate,
     dataDelete,
     dataEditDisplay,
-    dataEditSave
+    dataEditSave,
+    UserDataSave,UserLogin
 }

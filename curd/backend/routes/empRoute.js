@@ -9,4 +9,6 @@ route.get("/update", EmpController.dataUpdate);
 route.get("/recorddel", EmpController.dataDelete);
 route.get("/editdatadisplay", EmpController.dataEditDisplay);
 route.post("/editdatasave", EmpController.dataEditSave);
+route.post("/signup", EmpController.UserDataSave);
+route.post("/login", EmpController.UserLogin);
 module.exports=route;
