@@ -9,6 +9,7 @@ import EditData from "./pages/EditData";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Dashboard from "./pages/Dashboard";
 const App=()=>{
   return(
     <>
@@ -23,6 +24,7 @@ const App=()=>{
             <Route path="editdata/:id" element={<EditData/>}/>
             <Route path="login" element={<Login/>}/>
             <Route path="signup" element={<SignUp/>}/>
+            <Route path="dashboard" element={<Dashboard/>}/>
           </Route>
         </Routes>      
       </BrowserRouter>

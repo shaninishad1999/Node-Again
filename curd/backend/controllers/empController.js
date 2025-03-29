@@ -67,20 +67,25 @@ const UserDataSave=async(req, res)=>{
 
 const UserLogin=async(req,res)=>{
    const {email,password}=req.body;
-   const Employee=await EmpModel.findOne({email:email})
+  try {
+    const Employee=await EmpModel.findOne({email:email})
 
-  if(!Employee){
-
-      res.send({ msg: "Invalid email" });
-    }
+    if(!Employee){
+  
+        res.status(401).send({ msg: "Invalid email" });
+      }
+      
+      if(Employee.password!=password){
+          res.status(401).send({ msg: "Invalid password" });
+          
+      }
+      
+      res.status(200).send({ msg: "Loign Succesfully", Employee:Employee });
+      
     
-    if(Employee.password!=password){
-        res.send({ msg: "Invalid password" });
-        
-    }
+  } catch (error) {
     
-    res.send({ msg: "Loign Succesfully", Employee:Employee });
-    
+  }
 }
 
 module.exports ={

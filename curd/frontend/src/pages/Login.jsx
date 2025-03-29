@@ -2,9 +2,11 @@ import axios from "axios";
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [input, setInput] = useState({ email: "", password: "" });
+  const navigate=useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -12,6 +14,9 @@ const Login = () => {
     const response = await axios.post(api, input);
     console.log(response.data);
     alert(response.data.msg);
+    localStorage.setItem("username",response.data.Employee.name)
+    localStorage.setItem("email",response.data.Employee.email)
+    navigate("/dashboard")
   };
 
   const handleInput = (e) => {

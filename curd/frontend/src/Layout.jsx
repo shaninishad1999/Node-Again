@@ -9,6 +9,7 @@ const Layout=()=>{
           <Link to="update"> Update | </Link> 
           <Link to="signup"> SignUp  | </Link> 
           <Link to="login"> login </Link> 
+       
          <hr />
          <Outlet />
          <hr />
